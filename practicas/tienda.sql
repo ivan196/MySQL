@@ -4,6 +4,8 @@ create database tienda_moviles;
 
 use tienda_moviles;
 
+-- aqui es la zona donde estan creadas las tablas --
+
 create table clientes (
 	DNI char(9),
 	nombre varchar(15),
@@ -112,3 +114,39 @@ create table contratos (
 	foreign key (nombre_operadoras_tarifas_ofertas,nombre_tarifas_ofertas) references ofertas (nombre_operadoras_tarifas,nombre_tarifas),
 	foreign key (marca_moviles_ofertas,modelo_moviles_ofertas) references ofertas (marca_movil_contrato,modelo_movil_contrato)
 );
+
+
+-- a partir de aqui estan los datos --
+
+insert into clientes (DNI,nombre,apellidos,telefono,email)
+
+	values ('12345678J','iván','tomé','622477211','ivantome.ciclos@gmail.com');
+
+
+insert into tiendas (nombre,provincia,localidad,direccion,telefono)
+
+	values ('the phone house','madrid','madrid','calle del agarrado 50','692586693');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
