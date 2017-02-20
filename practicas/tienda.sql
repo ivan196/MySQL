@@ -46,7 +46,7 @@ use tienda_moviles;
 		tipodatos varchar(20),
 		minutosgratis varchar(15),
 		smsgratis varchar(15),
-		primary key (nombre, nombre_operadoras),
+		primary key (nombre),
 		foreign key (nombre_operadoras)
 		references operadoras (nombre)
 	);
@@ -66,7 +66,6 @@ use tienda_moviles;
 		marca_moviles varchar(20),
 		modelo_moviles varchar(20),
 		precio varchar(10),
-		primary key (marca_moviles,modelo_moviles),
 		
 		foreign key (marca_moviles,modelo_moviles) 			
 		references moviles (marca,modelo)
@@ -91,7 +90,6 @@ use tienda_moviles;
 		nombre_tarifas varchar(20),
 		marca_movil_contrato varchar(20),
 		modelo_movil_contrato varchar(20),
-		primary key (nombre_operadoras_tarifas,nombre_tarifas,marca_movil_contrato,modelo_movil_contrato),
 	
 		foreign key (nombre_operadoras_tarifas,nombre_tarifas)
 		references tarifas (nombre_operadoras,nombre),
@@ -106,7 +104,6 @@ use tienda_moviles;
 		marca_moviles_ofertas varchar(20),
 		modelo_moviles_ofertas varchar(20),
 		dia enum('lunes','martes','miercoles','jueves','viernes','sabado','domingo'),
-		primary key (DNI_cliente,nombre_tienda,marca_moviles_ofertas,modelo_moviles_ofertas),
 	
 		foreign key (DNI_cliente)
 		references clientes (DNI),
@@ -126,8 +123,6 @@ use tienda_moviles;
 		marca_moviles_ofertas varchar(20),
 		modelo_moviles_ofertas varchar(20),
 		dia enum('lunes','martes','miercoles','jueves','viernes','sabado','domingo'),
-		primary key (DNI_cliente,nombre_tienda,nombre_operadoras_tarifas_ofertas,
-				nombre_tarifas_ofertas,marca_moviles_ofertas,modelo_moviles_ofertas),
 	
 		foreign key (DNI_cliente)
 		references clientes (DNI),

@@ -1,11 +1,11 @@
 -- en este otro archivo sql introduciremos los datos --
 
 
--- informacion sobre clientes --
+-- 1 informacion sobre clientes -- 
 
 	insert into clientes (DNI,nombre,apellidos,telefono,email)
 
-		values ('12345678J','iván','tomé','622477211','ivantome.ciclos@gmail.com');
+		values ('04897548A','Fernando','Silva Vera','648457856','fernandosilv4c@gmail.com');
 
 	insert into clientes (DNI,nombre,apellidos,telefono,email)
 	
@@ -23,7 +23,7 @@
 
 		values ('15784894A','Soma','Yukihira','614785478','Shokugeki@Soma.com');
 
--- informacion sobre tiendas --
+-- 2 informacion sobre tiendas --
 
 	insert into tiendas(nombre,provincia,localidad,direccion,telefono)
 	
@@ -45,7 +45,7 @@
 	
 		    VALUES ('Phone yunyun','Madrid','Madrid','calle megumin 77','648524758');
 
--- informacion sobre operadoras --
+-- 3 informacion sobre operadoras --
 
 	insert into operadoras(nombre,colorlogo,porcentajecobertura,frecuenciaGSM,paginaweb)
 
@@ -67,7 +67,7 @@
 
 		    VALUES ('Lowi','Negro','50%','480.2','www.Lowi.es');
 
--- informacion sobre tarifas --
+-- 4 informacion sobre tarifas --
 
 	INSERT INTO tarifas(nombre,nombre_operadoras,tamañodatos,minutosgratis,smsgratis)
 
@@ -89,7 +89,7 @@
 
 		    VALUES ('Perro','Lowi','5GB','90','60');
 
--- informacion sobre moviles --
+-- 5 informacion sobre moviles --
 
 	INSERT INTO moviles(marca,modelo,descripcion,SO,RAM,pulgadaspantalla,camaraMpx)
 
@@ -111,7 +111,7 @@
 
 	           VALUES ('Apple','IPhone 7 Plus','Nuevo modelo igual que el anterior pero sin hueco para los cascos! y no explota!!!!!','IOS 10','8GB','8','15');
 
--- informacion sobre movil_libre --
+-- 6 informacion sobre movil_libre --
 
 	INSERT INTO movil_libre(marca_moviles,modelo_moviles,precio)
 
@@ -133,7 +133,7 @@
 
 		Values ('Apple','IPhone 7 Plus','800');
 
--- informacion sobre movil_contrato --
+-- 7 informacion sobre movil_contrato --
 
 	INSERT INTO movil_contrato(marca_moviles,modelo_moviles,nombre_operadoras,precio)
 
@@ -147,7 +147,7 @@
 
 		Values ('Acer','Liquid Z220','Ono','600');
 
-	INSERT INTO movil_contrato(marca_moviles,modelo_moviles,nombre_operadoras,precio)
+	INSERT INTO movil_contrato(marca_moviles,modelo_moviles,nombre_operadoras,precio)--
 
 		Values ('Airis','TM-500','Vodafone','400');
 
@@ -155,7 +155,7 @@
 
 		Values ('Apple','IPhone 7 Plus','Yoigo','1000');
 
--- informacion sobre ofertas --
+-- 8 informacion sobre ofertas --
 
 	INSERT INTO ofertas(nombre_operadoras_tarifas,nombre_tarifas,marca_movil_contrato,modelo_movil_contrato)
 
@@ -177,31 +177,49 @@
 
 		Values ('Lowi','Perro','Huawei','P8 Lite');
 
--- informacion sobre compras --
+-- 9 informacion sobre compras --
 
 	INSERT INTO compras(DNI_cliente,nombre_tienda,marca_moviles_ofertas,modelo_moviles_ofertas,dia)
 
 		Values ('02478542Q','Phone Another','Airis','TM-500','Lunes');
-		
+
 	INSERT INTO compras(DNI_cliente,nombre_tienda,marca_moviles_ofertas,modelo_moviles_ofertas,dia)
 
 		Values ('04897548A','Phone Kirito','Apple','IPhone 7 Plus','Miercoles');
-		
+
 	INSERT INTO compras(DNI_cliente,nombre_tienda,marca_moviles_ofertas,modelo_moviles_ofertas,dia)
 
-		Values ('15784589A','Phone luffy','Samsung','Galaxy J5');
-	
+		Values ('15784589A','Phone luffy','Samsung','Galaxy J5','Viernes');
+
 	INSERT INTO compras(DNI_cliente,nombre_tienda,marca_moviles_ofertas,modelo_moviles_ofertas,dia)
 
 		Values ('15784894A','Phone Rias','Acer','Liquid Z220','Sabado');
-		
+
 	INSERT INTO compras(DNI_cliente,nombre_tienda,marca_moviles_ofertas,modelo_moviles_ofertas,dia)
 
 		Values ('45378458P','Phone yunyun','Huawei','P8 Lite','Martes');
 
+-- 10 informacion sobre contratos --
 
+	 INSERT INTO contratos(DNI_cliente,nombre_tienda,nombre_operadoras_tarifas_ofertas,nombre_tarifas_ofertas,marca_moviles_ofertas,modelo_moviles_ofertas,dia)
+	
+		VALUES ('02478542Q','Phone yunyun','Lowi','Perro','Huawei','P8 Lite','Lunes');
 
+	 INSERT INTO contratos(DNI_cliente,nombre_tienda,nombre_operadoras_tarifas_ofertas,nombre_tarifas_ofertas,marca_moviles_ofertas,modelo_moviles_ofertas,dia)
 
+		VALUES ('04897548A','Phone Kirito','Ono','Neko','Acer','Liquid Z220','Sabado');
+
+	 INSERT INTO contratos(DNI_cliente,nombre_tienda,nombre_operadoras_tarifas_ofertas,nombre_tarifas_ofertas,marca_moviles_ofertas,modelo_moviles_ofertas,dia)
+
+		VALUES ('15784589A','Phone Another','Lowi','Perro','Huawei','P8 Lite','Martes');
+
+	 INSERT INTO contratos(DNI_cliente,nombre_tienda,nombre_operadoras_tarifas_ofertas,nombre_tarifas_ofertas,marca_moviles_ofertas,modelo_moviles_ofertas,dia)
+
+		VALUES ('15784589A','Phone luffy','Vodafone','Ballena','Huawei','P8 Lite','Lunes');
+
+	 INSERT INTO contratos(DNI_cliente,nombre_tienda,nombre_operadoras_tarifas_ofertas,nombre_tarifas_ofertas,marca_moviles_ofertas,modelo_moviles_ofertas,dia)
+
+		VALUES ('02478542Q','Phone yunyun','Lowi','Perro','Apple','IPhone 7 Plus','Martes');
 
 
 
