@@ -1,11 +1,11 @@
 -- en este otro archivo sql introduciremos los datos --
 
 
--- 1 informacion sobre clientes -- 
+-- 1 informacion sobre clientes 04897548A 648457856 -- 
 
 	insert into clientes (DNI,nombre,apellidos,telefono,email)
 
-		values ('04897548A','Fernando','Silva Vera','648457856','fernandosilv4c@gmail.com');
+		values ('72459846X','ivan','tome','692715203','ivantome.ciclos@gmail.com');
 
 	insert into clientes (DNI,nombre,apellidos,telefono,email)
 	
@@ -185,7 +185,7 @@
 
 	INSERT INTO compras(DNI_cliente,nombre_tienda,marca_moviles_ofertas,modelo_moviles_ofertas,dia)
 
-		Values ('04897548A','Phone Kirito','Apple','IPhone 7 Plus','Miercoles');
+		Values ('72459846X','Phone Kirito','Apple','IPhone 7 Plus','Miercoles');
 
 	INSERT INTO compras(DNI_cliente,nombre_tienda,marca_moviles_ofertas,modelo_moviles_ofertas,dia)
 
@@ -207,7 +207,7 @@
 
 	 INSERT INTO contratos(DNI_cliente,nombre_tienda,nombre_operadoras_tarifas_ofertas,nombre_tarifas_ofertas,marca_moviles_ofertas,modelo_moviles_ofertas,dia)
 
-		VALUES ('04897548A','Phone Kirito','Ono','Neko','Acer','Liquid Z220','Sabado');
+		VALUES ('72459846X','Phone Kirito','Ono','Neko','Acer','Liquid Z220','Sabado');
 
 	 INSERT INTO contratos(DNI_cliente,nombre_tienda,nombre_operadoras_tarifas_ofertas,nombre_tarifas_ofertas,marca_moviles_ofertas,modelo_moviles_ofertas,dia)
 

@@ -1,10 +1,10 @@
-create database if not exists tienda_moviles;
+create database if not exists tienda;
 
-drop database if exists tienda_moviles;
+drop database if exists tienda;
 
-create database tienda_moviles;
+create database tienda;
 
-use tienda_moviles;
+use tienda;
 
 -- aqui es la zona donde estan creadas las tablas --
 
