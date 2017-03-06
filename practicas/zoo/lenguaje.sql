@@ -1,0 +1,46 @@
+DROP DATABASE IF EXISTS LENGUAJES;
+
+CREATE DATABASE LENGUAJES;
+
+USE LENGUAJES;
+
+CREATE TABLE LenguajeProg (
+Nombre VARCHAR(20),
+FechaLanzamiento DATE NOT NULL,
+Version FLOAT NOT NULL,
+NumDescargas INT DEFAULT 0,
+SOPrincipal ENUM('Windows','Linux','Mac'),
+HoraActualizacion TIME,
+PRIMARY KEY(Nombre)
+);
+
+ALTER TABLE LenguajeProg DROP SOPrincipal;
+
+CREATE TABLE SistemaOperativo (
+Nombre VARCHAR(15),
+Version VARCHAR(10),
+FechaLanzamiento DATE,
+PRIMARY KEY (Nombre,Version)
+);
+
+CREATE TABLE LPconSO (
+LP VARCHAR(20),
+SO VARCHAR(15)
+);
+
+ALTER TABLE LPconSO ADD CONSTRAINT FK_LPconSOLP FOREIGN KEY (LP) REFERENCES LenguajeProg (Nombre);
+ALTER TABLE LPconSO ADD SOVersion VARCHAR(10);
+ALTER TABLE LPconSO ADD CONSTRAINT FK_LPconSOSOVersion FOREIGN KEY (SO,SOVersion) REFERENCES SistemaOperativo (Nombre,Version);
+
+INSERT INTO LenguajeProg(Nombre,FechaLanzamiento,Version) VALUES ('Java','2012-02-02',2.3);
+INSERT INTO SistemaOperativo VALUES ('Windows','XP','2010-10-10');
+INSERT INTO LPconSO VALUES ('Java','Windows','XP');
+
+ALTER TABLE LPconSO ADD FOREIGN KEY (LP) REFERENCES LenguajeProg (Nombre) ON DELETE SET NULL ON UPDATE CASCADE;
+
+DELETE FROM LenguajeProg WHERE Nombre='Java';
+#DELETE FROM LPconSO WHERE LP='Java';
+
+ALTER TABLE LPconSO DROP FOREIGN KEY FK_LPconSOLP;
+
+#UPDATE LenguajeProg SET Nombre='Javo' WHERE Nombre='Java';
